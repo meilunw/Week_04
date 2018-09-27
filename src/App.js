@@ -8,9 +8,10 @@ class App extends Component {
     todos: ["Walk to latea", "Get boba"]
   };
 
-  addParameter = () => {
+  remove = () => {
     this.setState({
-      todos: [...this.state.todos, "Get more boba"]
+      todos: [],
+      todoListTitle: []
     })
   };
 
@@ -21,7 +22,7 @@ class App extends Component {
         {this.state.todos.map(x => (
           <ToDoListItem todo={x} />
         ))}
-        <button onClick={this.addParameter}> Add todo</button>
+        <button onClick={this.remove}> remove</button>
       </div>
     );
   }
